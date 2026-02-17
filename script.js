@@ -18,12 +18,12 @@
         {
           name: "Semester 2",
           subjects: [
-            { name: "English Communication", image: "https://picsum.photos/seed/english-communication-notes/1200/700", pdf: "notes/year-1/sem-2/english-communication.pdf" },
-            { name: "C++ Programming", image: "https://picsum.photos/seed/cpp-programming-notes/1200/700", pdf: "notes/year-1/sem-2/cpp-programming.pdf" },
-            { name: "Basics Of Android", image: "https://picsum.photos/seed/basics-of-android-notes/1200/700", pdf: "notes/year-1/sem-2/basics-of-android.pdf" },
-            { name: "Web Development", image: "https://picsum.photos/seed/web-development-notes/1200/700", pdf: "notes/year-1/sem-2/web-development.pdf" },
-            { name: "Statistics", image: "https://picsum.photos/seed/statistics-notes/1200/700", pdf: "notes/year-1/sem-2/statistics.pdf" },
-            { name: "Enterprise Resource Planning", image: "https://picsum.photos/seed/erp-notes/1200/700", pdf: "notes/year-1/sem-2/enterprise-resource-planning.pdf" }
+            { name: "Constitution Of India", image: "https://picsum.photos/seed/constitution-of-india-notes/1200/700", pdf: "notes/year-2/sem-3/constitution-of-india.pdf" },
+            { name: "Microprocessor 8086", image: "https://picsum.photos/seed/microprocessor-8086-notes/1200/700", pdf: "notes/year-2/sem-3/microprocessor-8086.pdf" },
+            { name: "Database Management System", image: "https://picsum.photos/seed/dbms-notes/1200/700", pdf: "notes/year-2/sem-3/database-management-system.pdf" },
+            { name: "Data Structures", image: "https://picsum.photos/seed/data-structures-notes/1200/700", pdf: "notes/year-2/sem-3/data-structures.pdf" },
+            { name: "Communication Skills", image: "https://picsum.photos/seed/communication-skills-2-notes/1200/700", pdf: "notes/year-2/sem-3/communication-skills.pdf" },
+            { name: "C Programming", image: "https://picsum.photos/seed/c-programming-2-notes/1200/700", pdf: "notes/year-2/sem-3/c-programming.pdf" }
           ]
         }
       ]
@@ -34,17 +34,24 @@
         {
           name: "Semester 3",
           subjects: [
-            { name: "Constitution Of India", image: "https://picsum.photos/seed/constitution-of-india-notes/1200/700", pdf: "notes/year-2/sem-1/constitution-of-india.pdf" },
-            { name: "Microprocessor 8086", image: "https://picsum.photos/seed/microprocessor-8086-notes/1200/700", pdf: "notes/year-2/sem-1/microprocessor-8086.pdf" },
-            { name: "Database Management System", image: "https://picsum.photos/seed/dbms-notes/1200/700", pdf: "notes/year-2/sem-1/database-management-system.pdf" },
-            { name: "Data Structures", image: "https://picsum.photos/seed/data-structures-notes/1200/700", pdf: "notes/year-2/sem-1/data-structures.pdf" },
-            { name: "Communication Skills", image: "https://picsum.photos/seed/communication-skills-2-notes/1200/700", pdf: "notes/year-2/sem-1/communication-skills.pdf" },
-            { name: "C Programming", image: "https://picsum.photos/seed/c-programming-2-notes/1200/700", pdf: "notes/year-2/sem-1/c-programming.pdf" }
+            { name: "English Communication", image: "https://picsum.photos/seed/english-communication-notes/1200/700", pdf: "notes/year-1/sem-2/english-communication.pdf" },
+            { name: "C++ Programming", image: "https://picsum.photos/seed/cpp-programming-notes/1200/700", pdf: "notes/year-1/sem-2/cpp-programming.pdf" },
+            { name: "Basics Of Android", image: "https://picsum.photos/seed/basics-of-android-notes/1200/700", pdf: "notes/year-1/sem-2/basics-of-android.pdf" },
+            { name: "Web Development", image: "https://picsum.photos/seed/web-development-notes/1200/700", pdf: "notes/year-1/sem-2/web-development.pdf" },
+            { name: "Statistics", image: "https://picsum.photos/seed/statistics-notes/1200/700", pdf: "notes/year-1/sem-2/statistics.pdf" },
+            { name: "Enterprise Resource Planning", image: "https://picsum.photos/seed/erp-notes/1200/700", pdf: "notes/year-1/sem-2/enterprise-resource-planning.pdf" }
           ]
         },
         {
           name: "Semester 4",
-          subjects: []
+          subjects: [
+            { name: "Advance Android", image: "https://picsum.photos/seed/advance-android-notes/1200/700", pdf: "notes/year-2/sem-4/advance-android.pdf" },
+            { name: "Java", image: "https://picsum.photos/seed/java-notes/1200/700", pdf: "notes/year-2/sem-4/java.pdf" },
+            { name: "RDBMS", image: "https://picsum.photos/seed/rdbms-notes/1200/700", pdf: "notes/year-2/sem-4/rdbms.pdf" },
+            { name: "Digital Marketing", image: "https://picsum.photos/seed/digital-marketing-notes/1200/700", pdf: "notes/year-2/sem-4/digital-marketing.pdf" },
+            { name: "Web Developement 2", image: "https://picsum.photos/seed/web-developement-2-notes/1200/700", pdf: "notes/year-2/sem-4/web-developement-2.pdf" },
+            { name: "English", image: "https://picsum.photos/seed/english-notes/1200/700", pdf: "notes/year-2/sem-4/english.pdf" }
+          ]
         }
       ]
     },
