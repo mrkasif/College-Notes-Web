@@ -1,72 +1,177 @@
 ﻿{
-  "years": [
-    {
-      "year": "Year 1",
-      "semesters": [
-        {
-          "name": "Semester 1",
-          "subjects": [
-            { "name": "Hindi", "image": "https://picsum.photos/seed/hindi-notes/1200/700", "pdf": "notes/year-1/sem-1/hindi.pdf" },
-            { "name": "Writing Skills", "image": "https://picsum.photos/seed/writing-skills-notes/1200/700", "pdf": "notes/year-1/sem-1/writing-skills.pdf" },
-            { "name": "Communication Skills", "image": "https://picsum.photos/seed/communication-skills-notes/1200/700", "pdf": "notes/year-1/sem-1/communication-skills.pdf" },
-            { "name": "Mathematics", "image": "https://picsum.photos/seed/mathematics-notes/1200/700", "pdf": "notes/year-1/sem-1/mathematics.pdf" },
-            { "name": "C Programming", "image": "https://picsum.photos/seed/c-programming-notes/1200/700", "pdf": "notes/year-1/sem-1/c-programming.pdf" },
-            { "name": "Computer Fundamentals", "image": "https://picsum.photos/seed/computer-fundamentals-notes/1200/700", "pdf": "notes/year-1/sem-1/computer-fundamentals.pdf" },
-            { "name": "Operating System", "image": "https://picsum.photos/seed/operating-system-notes/1200/700", "pdf": "notes/year-1/sem-1/operating-system.pdf" }
-          ]
-        },
-        {
-          "name": "Semester 2",
-          "subjects": [
-            { "name": "Constitution Of India", "image": "https://picsum.photos/seed/constitution-of-india-notes/1200/700", "pdf": "notes/year-2/sem-3/constitution-of-india.pdf" },
-            { "name": "Microprocessor 8086", "image": "https://picsum.photos/seed/microprocessor-8086-notes/1200/700", "pdf": "notes/year-2/sem-3/microprocessor-8086.pdf" },
-            { "name": "Database Management System", "image": "https://picsum.photos/seed/dbms-notes/1200/700", "pdf": "notes/year-2/sem-3/database-management-system.pdf" },
-            { "name": "Data Structures", "image": "https://picsum.photos/seed/data-structures-notes/1200/700", "pdf": "notes/year-2/sem-3/data-structures.pdf" },
-            { "name": "Communication Skills", "image": "https://picsum.photos/seed/communication-skills-2-notes/1200/700", "pdf": "notes/year-2/sem-3/communication-skills.pdf" },
-            { "name": "C Programming", "image": "https://picsum.photos/seed/c-programming-2-notes/1200/700", "pdf": "notes/year-2/sem-3/c-programming.pdf" }
-          ]
-        }
-      ]
-    },
-    {
-      "year": "Year 2",
-      "semesters": [
-        {
-          "name": "Semester 3",
-          "subjects": [
-            { "name": "English Communication", "image": "https://picsum.photos/seed/english-communication-notes/1200/700", "pdf": "notes/year-1/sem-2/english-communication.pdf" },
-            { "name": "C++ Programming", "image": "https://picsum.photos/seed/cpp-programming-notes/1200/700", "pdf": "notes/year-1/sem-2/cpp-programming.pdf" },
-            { "name": "Basics Of Android", "image": "https://picsum.photos/seed/basics-of-android-notes/1200/700", "pdf": "notes/year-1/sem-2/basics-of-android.pdf" },
-            { "name": "Web Development", "image": "https://picsum.photos/seed/web-development-notes/1200/700", "pdf": "notes/year-1/sem-2/web-development.pdf" },
-            { "name": "Statistics", "image": "https://picsum.photos/seed/statistics-notes/1200/700", "pdf": "notes/year-1/sem-2/statistics.pdf" },
-            { "name": "Enterprise Resource Planning", "image": "https://picsum.photos/seed/erp-notes/1200/700", "pdf": "notes/year-1/sem-2/enterprise-resource-planning.pdf" }
-          ]
-        },
-        {
-          "name": "Semester 4",
-          "subjects": [
-            { "name": "Advance Android", "image": "https://picsum.photos/seed/advance-android-notes/1200/700", "pdf": "notes/year-2/sem-4/advance-android.pdf" },
-            { "name": "Java", "image": "https://picsum.photos/seed/java-notes/1200/700", "pdf": "notes/year-2/sem-4/java.pdf" },
-            { "name": "RDBMS", "image": "https://picsum.photos/seed/rdbms-notes/1200/700", "pdf": "notes/year-2/sem-4/rdbms.pdf" },
-            { "name": "Digital Marketing", "image": "https://picsum.photos/seed/digital-marketing-notes/1200/700", "pdf": "notes/year-2/sem-4/digital-marketing.pdf" },
-            { "name": "Web Developement 2", "image": "https://picsum.photos/seed/web-developement-2-notes/1200/700", "pdf": "notes/year-2/sem-4/web-developement-2.pdf" },
-            { "name": "English", "image": "https://picsum.photos/seed/english-notes/1200/700", "pdf": "notes/year-2/sem-4/english.pdf" }
-          ]
-        }
-      ]
-    },
-    {
-      "year": "Year 3",
-      "semesters": [
-        {
-          "name": "Semester 5",
-          "subjects": []
-        },
-        {
-          "name": "Semester 6",
-          "subjects": []
-        }
-      ]
-    }
-  ]
+    "years":  [
+                  {
+                      "year":  "Year 1",
+                      "semesters":  [
+                                        {
+                                            "name":  "Semester 1",
+                                            "subjects":  [
+                                                             {
+                                                                 "name":  "Hindi",
+                                                                 "image":  "https://picsum.photos/seed/hindi-notes/1200/700",
+                                                                 "pdf":  "notes/year-1/sem-1/hindi1.pdf"
+                                                             },
+                                                             {
+                                                                 "name":  "Writing Skills",
+                                                                 "image":  "https://picsum.photos/seed/writing-skills-notes/1200/700",
+                                                                 "pdf":  "notes/year-1/sem-1/writing-skills1.pdf"
+                                                             },
+                                                             {
+                                                                 "name":  "Communication Skills",
+                                                                 "image":  "https://picsum.photos/seed/communication-skills-notes/1200/700",
+                                                                 "pdf":  "notes/year-1/sem-1/communication-skills1.pdf"
+                                                             },
+                                                             {
+                                                                 "name":  "Mathematics",
+                                                                 "image":  "https://picsum.photos/seed/mathematics-notes/1200/700",
+                                                                 "pdf":  "notes/year-1/sem-1/mathematics1.pdf"
+                                                             },
+                                                             {
+                                                                 "name":  "C Programming",
+                                                                 "image":  "https://picsum.photos/seed/c-programming-notes/1200/700",
+                                                                 "pdf":  "notes/year-1/sem-1/c-programming1.pdf"
+                                                             },
+                                                             {
+                                                                 "name":  "Computer Fundamentals",
+                                                                 "image":  "https://picsum.photos/seed/computer-fundamentals-notes/1200/700",
+                                                                 "pdf":  "notes/year-1/sem-1/computer-fundamentals1.pdf"
+                                                             },
+                                                             {
+                                                                 "name":  "Operating System",
+                                                                 "image":  "https://picsum.photos/seed/operating-system-notes/1200/700",
+                                                                 "pdf":  "notes/year-1/sem-1/operating-system1.pdf"
+                                                             }
+                                                         ]
+                                        },
+                                        {
+                                            "name":  "Semester 2",
+                                            "subjects":  [
+                                                             {
+                                                                 "name":  "Constitution Of India",
+                                                                 "image":  "https://picsum.photos/seed/constitution-of-india-notes/1200/700",
+                                                                 "pdf":  "notes/year-1/sem-2/constitution-of-india2.pdf"
+                                                             },
+                                                             {
+                                                                 "name":  "Microprocessor 8086",
+                                                                 "image":  "https://picsum.photos/seed/microprocessor-8086-notes/1200/700",
+                                                                 "pdf":  "notes/year-1/sem-2/microprocessor-80862.pdf"
+                                                             },
+                                                             {
+                                                                 "name":  "Database Management System",
+                                                                 "image":  "https://picsum.photos/seed/dbms-notes/1200/700",
+                                                                 "pdf":  "notes/year-1/sem-2/database-management-system2.pdf"
+                                                             },
+                                                             {
+                                                                 "name":  "Data Structures",
+                                                                 "image":  "https://picsum.photos/seed/data-structures-notes/1200/700",
+                                                                 "pdf":  "notes/year-1/sem-2/data-structures2.pdf"
+                                                             },
+                                                             {
+                                                                 "name":  "Communication Skills",
+                                                                 "image":  "https://picsum.photos/seed/communication-skills-2-notes/1200/700",
+                                                                 "pdf":  "notes/year-1/sem-2/communication-skills2.pdf"
+                                                             },
+                                                             {
+                                                                 "name":  "C Programming",
+                                                                 "image":  "https://picsum.photos/seed/c-programming-2-notes/1200/700",
+                                                                 "pdf":  "notes/year-1/sem-2/c-programming2.pdf"
+                                                             }
+                                                         ]
+                                        }
+                                    ]
+                  },
+                  {
+                      "year":  "Year 2",
+                      "semesters":  [
+                                        {
+                                            "name":  "Semester 3",
+                                            "subjects":  [
+                                                             {
+                                                                 "name":  "English Communication",
+                                                                 "image":  "https://picsum.photos/seed/english-communication-notes/1200/700",
+                                                                 "pdf":  "notes/year-2/sem-3/english-communication3.pdf"
+                                                             },
+                                                             {
+                                                                 "name":  "C++ Programming",
+                                                                 "image":  "https://picsum.photos/seed/cpp-programming-notes/1200/700",
+                                                                 "pdf":  "notes/year-2/sem-3/c-plus-plus3.pdf"
+                                                             },
+                                                             {
+                                                                 "name":  "Basics Of Android",
+                                                                 "image":  "https://picsum.photos/seed/basics-of-android-notes/1200/700",
+                                                                 "pdf":  "notes/year-2/sem-3/basics-of-android3.pdf"
+                                                             },
+                                                             {
+                                                                 "name":  "Web Development",
+                                                                 "image":  "https://picsum.photos/seed/web-development-notes/1200/700",
+                                                                 "pdf":  "notes/year-2/sem-3/web-development3.pdf"
+                                                             },
+                                                             {
+                                                                 "name":  "Statistics",
+                                                                 "image":  "https://picsum.photos/seed/statistics-notes/1200/700",
+                                                                 "pdf":  "notes/year-2/sem-3/statistics3.pdf"
+                                                             },
+                                                             {
+                                                                 "name":  "Enterprise Resource Planning",
+                                                                 "image":  "https://picsum.photos/seed/erp-notes/1200/700",
+                                                                 "pdf":  "notes/year-2/sem-3/enterprise-resource-planning3.pdf"
+                                                             }
+                                                         ]
+                                        },
+                                        {
+                                            "name":  "Semester 4",
+                                            "subjects":  [
+                                                             {
+                                                                 "name":  "Advance Android",
+                                                                 "image":  "https://picsum.photos/seed/advance-android-notes/1200/700",
+                                                                 "pdf":  "notes/year-2/sem-4/advance-android4.pdf"
+                                                             },
+                                                             {
+                                                                 "name":  "Java",
+                                                                 "image":  "https://picsum.photos/seed/java-notes/1200/700",
+                                                                 "pdf":  "notes/year-2/sem-4/java4.pdf"
+                                                             },
+                                                             {
+                                                                 "name":  "RDBMS",
+                                                                 "image":  "https://picsum.photos/seed/rdbms-notes/1200/700",
+                                                                 "pdf":  "notes/year-2/sem-4/rdbms4.pdf"
+                                                             },
+                                                             {
+                                                                 "name":  "Digital Marketing",
+                                                                 "image":  "https://picsum.photos/seed/digital-marketing-notes/1200/700",
+                                                                 "pdf":  "notes/year-2/sem-4/digital-marketing4.pdf"
+                                                             },
+                                                             {
+                                                                 "name":  "Web Developement 2",
+                                                                 "image":  "https://picsum.photos/seed/web-developement-2-notes/1200/700",
+                                                                 "pdf":  "notes/year-2/sem-4/web-developement-24.pdf"
+                                                             },
+                                                             {
+                                                                 "name":  "English",
+                                                                 "image":  "https://picsum.photos/seed/english-notes/1200/700",
+                                                                 "pdf":  "notes/year-2/sem-4/english4.pdf"
+                                                             }
+                                                         ]
+                                        }
+                                    ]
+                  },
+                  {
+                      "year":  "Year 3",
+                      "semesters":  [
+                                        {
+                                            "name":  "Semester 5",
+                                            "subjects":  [
+
+                                                         ]
+                                        },
+                                        {
+                                            "name":  "Semester 6",
+                                            "subjects":  [
+
+                                                         ]
+                                        }
+                                    ]
+                  }
+              ]
 }
+
