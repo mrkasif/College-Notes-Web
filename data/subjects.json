@@ -1,0 +1,16 @@
+﻿{
+  "years": [
+    {
+      "year": "Year 1",
+      "semesters": ["Semester 1", "Semester 2"]
+    },
+    {
+      "year": "Year 2",
+      "semesters": ["Semester 1", "Semester 2"]
+    },
+    {
+      "year": "Year 3",
+      "semesters": ["Semester 1", "Semester 2"]
+    }
+  ]
+}
