@@ -175,10 +175,14 @@
               ]
 };
 
+const DEFAULT_IMAGE = "https://picsum.photos/seed/default-subject-notes/1200/700";
+const DATA_FILES = ["data/data.json", "data/subjects.json"];
+const AVAILABLE_SEMESTERS = [1, 2, 3, 4, 5, 6];
+
 const state = {
   subjects: [],
   search: "",
-  semesterFilter: "all"
+  semesterFilter: "all",
 };
 
 function normalizeSubject(subject, idx, yearName, semesterName) {
@@ -186,22 +190,24 @@ function normalizeSubject(subject, idx, yearName, semesterName) {
     return {
       id: `${yearName}-${semesterName}-${idx}`,
       name: subject,
-      image: "https://picsum.photos/seed/default-subject-notes/1200/700",
+      image: DEFAULT_IMAGE,
       pdf: "",
       year: yearName,
       semester: semesterName,
-      semesterNumber: extractSemesterNumber(semesterName)
+      semesterNumber: extractSemesterNumber(semesterName),
     };
   }
 
+  const subjectName = subject?.name || `Subject ${idx + 1}`;
+
   return {
-    id: `${yearName}-${semesterName}-${idx}-${subject?.name || "subject"}`,
-    name: subject?.name || `Subject ${idx + 1}`,
-    image: subject?.image || "https://picsum.photos/seed/default-subject-notes/1200/700",
+    id: `${yearName}-${semesterName}-${idx}-${subjectName}`,
+    name: subjectName,
+    image: subject?.image || DEFAULT_IMAGE,
     pdf: typeof subject?.pdf === "string" ? subject.pdf : "",
     year: yearName,
     semester: semesterName,
-    semesterNumber: extractSemesterNumber(semesterName)
+    semesterNumber: extractSemesterNumber(semesterName),
   };
 }
 
@@ -212,23 +218,29 @@ function extractSemesterNumber(semesterName) {
 
 function flattenData(data) {
   const years = Array.isArray(data?.years) ? data.years : [];
-  const flattened = [];
+  const items = [];
 
   years.forEach((yearObj, yearIdx) => {
     const yearName = yearObj?.year || `Year ${yearIdx + 1}`;
     const semesters = Array.isArray(yearObj?.semesters) ? yearObj.semesters : [];
 
     semesters.forEach((semObj, semIdx) => {
-      const semesterName = typeof semObj === "string" ? semObj : (semObj?.name || `Semester ${semIdx + 1}`);
-      const subjects = typeof semObj === "string" ? [] : (Array.isArray(semObj?.subjects) ? semObj.subjects : []);
+      const semesterName =
+        typeof semObj === "string" ? semObj : semObj?.name || `Semester ${semIdx + 1}`;
+      const subjects =
+        typeof semObj === "string"
+          ? []
+          : Array.isArray(semObj?.subjects)
+          ? semObj.subjects
+          : [];
 
       subjects.forEach((subject, subjectIdx) => {
-        flattened.push(normalizeSubject(subject, subjectIdx, yearName, semesterName));
+        items.push(normalizeSubject(subject, subjectIdx, yearName, semesterName));
       });
     });
   });
 
-  return flattened;
+  return items;
 }
 
 function escapeHtml(text) {
@@ -241,11 +253,12 @@ function escapeHtml(text) {
 }
 
 function getFilteredSubjects() {
-  const search = state.search.trim().toLowerCase();
+  const query = state.search.trim().toLowerCase();
 
   return state.subjects.filter((subject) => {
-    const bySemester = state.semesterFilter === "all" || String(subject.semesterNumber) === state.semesterFilter;
-    const bySearch = !search || subject.name.toLowerCase().includes(search);
+    const bySemester =
+      state.semesterFilter === "all" || String(subject.semesterNumber) === state.semesterFilter;
+    const bySearch = !query || subject.name.toLowerCase().includes(query);
     return bySemester && bySearch;
   });
 }
@@ -254,11 +267,14 @@ function renderFilters() {
   const filtersEl = document.getElementById("semesterFilters");
   if (!filtersEl) return;
 
-  const semesterNumbers = [1, 2, 3, 4, 5, 6];
-
   const chips = [
     `<button class="filter-btn ${state.semesterFilter === "all" ? "active" : ""}" data-semester="all">All Subjects</button>`,
-    ...semesterNumbers.map((n) => `<button class="filter-btn ${state.semesterFilter === String(n) ? "active" : ""}" data-semester="${n}">Semester ${n}</button>`)
+    ...AVAILABLE_SEMESTERS.map(
+      (n) =>
+        `<button class="filter-btn ${
+          state.semesterFilter === String(n) ? "active" : ""
+        }" data-semester="${n}">Semester ${n}</button>`
+    ),
   ];
 
   filtersEl.innerHTML = chips.join("");
@@ -302,15 +318,15 @@ function setupControls() {
   const filtersEl = document.getElementById("semesterFilters");
 
   if (searchInput) {
-    searchInput.addEventListener("input", (event) => {
-      state.search = event.target.value || "";
+    searchInput.addEventListener("input", (e) => {
+      state.search = e.target.value || "";
       renderSubjects();
     });
   }
 
   if (filtersEl) {
-    filtersEl.addEventListener("click", (event) => {
-      const button = event.target.closest(".filter-btn");
+    filtersEl.addEventListener("click", (e) => {
+      const button = e.target.closest(".filter-btn");
       if (!button) return;
 
       state.semesterFilter = button.getAttribute("data-semester") || "all";
@@ -335,8 +351,8 @@ function setupPdfViewer() {
 
   if (!grid || !viewerSection || !viewerTitle || !pdfFrame || !closeViewerBtn) return;
 
-  grid.addEventListener("click", (event) => {
-    const card = event.target.closest(".subject-card");
+  grid.addEventListener("click", (e) => {
+    const card = e.target.closest(".subject-card");
     if (!card) return;
 
     const pdfPath = card.getAttribute("data-pdf") || "";
@@ -357,9 +373,7 @@ function setupPdfViewer() {
 }
 
 async function loadData() {
-  const paths = ["data/data.json", "data/subjects.json"];
-
-  for (const path of paths) {
+  for (const path of DATA_FILES) {
     try {
       const response = await fetch(path);
       if (!response.ok) continue;
