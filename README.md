@@ -10,5 +10,4 @@ Simple static website to organize notes by year and semester.
 - notes/
 - data/
 
-
-live at-  https://mrkasif.github.io/College-Notes-Web/
+https://mrkasif.github.io/College-Notes-Web/
