@@ -21,12 +21,15 @@
 
     <section class="controls-panel">
       <label class="controls-label" for="searchInput">Search Subjects</label>
-      <input id="searchInput" type="search" placeholder="Type a subject name (Ctrl+K)" autocomplete="off" />
-      <label class="controls-label" style="margin-top:12px" for="semesterFilters">Filter by Semester</label>
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
+        <input id="searchInput" type="search" placeholder="Type a subject name (Ctrl+K)" autocomplete="off" />
+      </div>
+      <label class="controls-label" style="margin-top:14px" for="semesterFilters">Filter by Semester</label>
       <div class="filter-row" id="semesterFilters"></div>
     </section>
 
-    <section class="subject-grid" id="subjectGrid"></section>
+    <section id="subjectGrid"></section>
 
     <section class="pdf-viewer is-hidden" id="pdfViewerSection">
       <div class="viewer-header">
@@ -35,7 +38,7 @@
           <span class="viewer-meta" id="viewerMeta"></span>
         </div>
         <div class="viewer-actions">
-          <a class="viewer-btn" id="viewerOpen" href="#" target="_blank" rel="noopener noreferrer">Open in New Tab</a>
+          <a class="viewer-btn viewer-btn--primary" id="viewerOpen" href="#" target="_blank" rel="noopener noreferrer">Open in New Tab</a>
           <a class="viewer-btn" id="viewerDownload" href="#" download>Download</a>
           <button type="button" class="viewer-close" id="closeViewerBtn">Close</button>
         </div>
