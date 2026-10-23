@@ -9,12 +9,20 @@
 <body>
   <div class="app-shell">
     <header class="topbar">
-      <h1>College Notes Hub</h1>
+      <div class="brand">
+        <div class="brand__logo">IT</div>
+        <div>
+          <h1>College Notes Hub</h1>
+          <p class="tagline">B.Sc. IT notes &mdash; Year 1 to 3</p>
+        </div>
+      </div>
       <div class="profile-pill">K</div>
     </header>
 
     <section class="controls-panel">
-      <input id="searchInput" type="search" placeholder="Search subjects (Ctrl+K)" autocomplete="off" />
+      <label class="controls-label" for="searchInput">Search Subjects</label>
+      <input id="searchInput" type="search" placeholder="Type a subject name (Ctrl+K)" autocomplete="off" />
+      <label class="controls-label" style="margin-top:12px" for="semesterFilters">Filter by Semester</label>
       <div class="filter-row" id="semesterFilters"></div>
     </section>
 
@@ -22,8 +30,15 @@
 
     <section class="pdf-viewer is-hidden" id="pdfViewerSection">
       <div class="viewer-header">
-        <h2 id="viewerTitle">PDF Viewer</h2>
-        <button type="button" class="viewer-close" id="closeViewerBtn">Close</button>
+        <div class="viewer-title-wrap">
+          <h2 id="viewerTitle">PDF Viewer</h2>
+          <span class="viewer-meta" id="viewerMeta"></span>
+        </div>
+        <div class="viewer-actions">
+          <a class="viewer-btn" id="viewerOpen" href="#" target="_blank" rel="noopener noreferrer">Open in New Tab</a>
+          <a class="viewer-btn" id="viewerDownload" href="#" download>Download</a>
+          <button type="button" class="viewer-close" id="closeViewerBtn">Close</button>
+        </div>
       </div>
       <iframe id="pdfFrame" title="PDF Viewer"></iframe>
     </section>

@@ -287,25 +287,72 @@ function renderSubjects() {
   const subjects = getFilteredSubjects();
 
   if (subjects.length === 0) {
-    grid.innerHTML = '<div class="empty-state">No subjects found for this filter.</div>';
+    grid.innerHTML =
+      '<div class="empty-state">No subjects match your search. Try another name or semester.</div>';
     return;
   }
 
-  grid.innerHTML = subjects
-    .map((subject) => {
-      const title = escapeHtml(subject.name);
-      const subtitle = escapeHtml(`${subject.year} - ${subject.semester}`);
-      const image = escapeHtml(subject.image);
-      const pdf = escapeHtml(subject.pdf);
+  const byYear = new Map();
+  subjects.forEach((subject) => {
+    if (!byYear.has(subject.year)) byYear.set(subject.year, new Map());
+    const bySemester = byYear.get(subject.year);
+    if (!bySemester.has(subject.semester)) bySemester.set(subject.semester, []);
+    bySemester.get(subject.semester).push(subject);
+  });
 
-      return `
-        <button class="subject-card" style="background-image: url('${image}');" data-title="${title}" data-pdf="${pdf}">
-          <span class="subject-card__label">${title}</span>
-          <span class="subject-card__meta">${subtitle}</span>
-        </button>
-      `;
-    })
-    .join("");
+  const semesterOrder = ["Semester 1", "Semester 2", "Semester 3", "Semester 4", "Semester 5", "Semester 6"];
+  const yearOrder = ["Year 1", "Year 2", "Year 3"];
+  const rankIn = (list, value) => {
+    const i = list.indexOf(value);
+    return i === -1 ? list.length : i;
+  };
+
+  let html = "";
+  [...byYear.keys()]
+    .sort((a, b) => rankIn(yearOrder, a) - rankIn(yearOrder, b))
+    .forEach((year) => {
+      const semesters = byYear.get(year);
+      html += `<div class="year-group"><h2 class="year-group__title">${escapeHtml(year)}</h2>`;
+      [...semesters.keys()]
+        .sort((a, b) => rankIn(semesterOrder, a) - rankIn(semesterOrder, b))
+        .forEach((semester) => {
+          const list = semesters.get(semester);
+          const count = list.length;
+          html += `<div class="sem-head"><h3 class="sem-head__title">${escapeHtml(semester)}</h3><span class="sem-head__count">${count} subject${count > 1 ? "s" : ""}</span></div>`;
+          html += `<div class="subject-grid">`;
+          html += list
+            .map((subject) => {
+              const title = escapeHtml(subject.name);
+              const initials = subject.name
+                .split(/\s+/)
+                .slice(0, 2)
+                .map((word) => word.charAt(0))
+                .join("")
+                .toUpperCase();
+              const semNo = subject.semesterNumber % 6 === 0 ? 6 : subject.semesterNumber % 6;
+              const yearNo = Math.max(1, Math.ceil(subject.semesterNumber / 2));
+              const meta = `${subject.year} - ${subject.semester}`;
+              return `
+                <button class="subject-card" data-title="${title}" data-pdf="${escapeHtml(subject.pdf)}" data-meta="${escapeHtml(meta)}">
+                  <span class="subject-card__tile tile--${semNo}">${escapeHtml(initials)}</span>
+                  <span class="subject-card__body">
+                    <span class="subject-card__label">${title}</span>
+                    <span class="subject-card__meta">
+                      <span class="sem-badge sem-badge--${semNo}">Semester ${semNo}</span>
+                      <span class="year-chip">Year ${yearNo}</span>
+                    </span>
+                    <span class="subject-card__cta">Open notes &rarr;</span>
+                  </span>
+                </button>
+              `;
+            })
+            .join("");
+          html += `</div>`;
+        });
+      html += `</div>`;
+    });
+
+  grid.innerHTML = html;
 }
 
 function renderAll() {
@@ -346,6 +393,9 @@ function setupPdfViewer() {
   const grid = document.getElementById("subjectGrid");
   const viewerSection = document.getElementById("pdfViewerSection");
   const viewerTitle = document.getElementById("viewerTitle");
+  const viewerMeta = document.getElementById("viewerMeta");
+  const viewerOpen = document.getElementById("viewerOpen");
+  const viewerDownload = document.getElementById("viewerDownload");
   const pdfFrame = document.getElementById("pdfFrame");
   const closeViewerBtn = document.getElementById("closeViewerBtn");
 
@@ -360,6 +410,9 @@ function setupPdfViewer() {
     if (!pdfPath) return;
 
     viewerTitle.textContent = title;
+    if (viewerMeta) viewerMeta.textContent = card.getAttribute("data-meta") || "";
+    if (viewerOpen) viewerOpen.href = pdfPath;
+    if (viewerDownload) viewerDownload.href = pdfPath;
     pdfFrame.src = pdfPath;
     viewerSection.classList.remove("is-hidden");
     viewerSection.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -369,6 +422,9 @@ function setupPdfViewer() {
     viewerSection.classList.add("is-hidden");
     pdfFrame.removeAttribute("src");
     viewerTitle.textContent = "PDF Viewer";
+    if (viewerMeta) viewerMeta.textContent = "";
+    if (viewerOpen) viewerOpen.removeAttribute("href");
+    if (viewerDownload) viewerDownload.removeAttribute("href");
   });
 }
 
